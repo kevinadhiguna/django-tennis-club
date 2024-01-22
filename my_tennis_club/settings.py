@@ -39,6 +39,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Note: one must specify ALLOWED_HOSTS and set DEBUG to False, so Django will find 404.html in templates directory, in case a user visits http://localhost:8000/ivrtn4dj (random address)
+# DEBUG = False
+# ALLOWED_HOSTS = ['*']
+# Note: also, access to the admin page would be lost if DEBUG is set to True
 
 # Application definition
 
