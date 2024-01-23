@@ -11,7 +11,7 @@
             <li>
                 {% comment 'Either of the following works' %}{% endcomment %}
                 <!-- <a href="/members/detail/{{ member.id }}">{{member.firstname}} {{member.lastname}}</a> -->
-                <a href="{% url 'members:details' member.id %}">{{member.firstname}} {{member.lastname}}</a>
+                <a href="{% url 'members:details' member.slug %}">{{member.firstname}} {{member.lastname}}</a>
             </li>
         {% endfor %}
     </ul>
