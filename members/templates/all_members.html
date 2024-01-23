@@ -1,19 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Members</title>
-</head>
-<body>
-    <h1>Members</h1>
+{% extends 'master.html' %}
 
+{% block title %}
+    My Tennis Club - List of all members
+{% endblock %}
+
+{% block content %}
+    <h1>Members</h1>
     <ul>
         {% for member in members %}
-        <li>
-            <a href="/details{{ member.id }}">{{member.firstname}} {{member.lastname}}</a>
-        </li>
+            <li>
+                {% comment 'Either of the following works' %}{% endcomment %}
+                <!-- <a href="/members/detail/{{ member.id }}">{{member.firstname}} {{member.lastname}}</a> -->
+                <a href="{% url 'members:details' member.id %}">{{member.firstname}} {{member.lastname}}</a>
+            </li>
         {% endfor %}
     </ul>
-</body>
-</html>
+
+    <p>
+        Back to <a href="/">Home</a>
+    </p>
+{% endblock %}
